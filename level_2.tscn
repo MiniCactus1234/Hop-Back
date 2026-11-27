@@ -9,6 +9,12 @@
 [sub_resource type="RectangleShape2D" id="Shape_ground"]
 size = Vector2(800, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ypv"]
+size = Vector2(144, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nay7"]
+size = Vector2(120, 16)
+
 [node name="Level2" type="Node2D" unique_id=1497330130]
 script = ExtResource("1_1y8me")
 
@@ -58,3 +64,15 @@ position = Vector2(100, 270)
 [node name="Goal" parent="." unique_id=38197771 instance=ExtResource("5_n7ypv")]
 position = Vector2(1016, 24)
 next_level = "uid://bxyiqefbcvr68"
+
+[node name="StickyBranch" type="StaticBody2D" parent="." unique_id=361490667 groups=["sticky"]]
+position = Vector2(0, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickyBranch" unique_id=692940220]
+position = Vector2(-104, 72)
+shape = SubResource("RectangleShape2D_n7ypv")
+
+[node name="Sprite2D" type="Sprite2D" parent="StickyBranch" unique_id=1508056662]
+position = Vector2(-104.000015, 71.999985)
+scale = Vector2(1.2039999, -4.4100113)
+texture = SubResource("PlaceholderTexture2D_3nay7")

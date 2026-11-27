@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var jump_buffer_time: float = 0.1
 @export var jump_cut_multiplier: float = 0.5
 @export var fall_limit: float = 600.0
+@export var zip_speed: float = 700.0
 
 @onready var tongue_ray: RayCast2D = $TongueRay
 @onready var tongue: Line2D = $Tongue
@@ -93,7 +94,7 @@ func _physics_process(delta: float) -> void:
 
 func use_tongue() -> void:
 
-	tongue_ray.target_position = Vector2(100 * facing, 0)
+	tongue_ray.target_position = Vector2(100 * facing, -60)
 	tongue_ray.force_raycast_update()
 
 	if tongue_ray.is_colliding():
@@ -102,10 +103,15 @@ func use_tongue() -> void:
 		if target.is_in_group("tongue_target"):
 			target.come_alive()
 
+		if target.is_in_group("sticky"):
+			var hit_point = tongue_ray.get_collision_point()
+			var dir = (hit_point - global_position).normalized()
+			velocity = dir * zip_speed
+
 	# Draw the tongue
 	tongue.clear_points()
 	tongue.add_point(Vector2.ZERO)
-	tongue.add_point(Vector2(100 * facing, 0))
+	tongue.add_point(Vector2(100 * facing, -60))
 
 	await get_tree().create_timer(0.15).timeout
 
