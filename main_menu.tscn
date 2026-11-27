@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://byqnqm52y7wna"]
+
+[ext_resource type="Script" uid="uid://ch47i8d5co7y1" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=882566668]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_06t4h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=226138542]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=266429267]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 368.0
+offset_right = 768.0
+offset_bottom = 720.0
+
+[node name="Banner" type="TextureRect" parent="VBoxContainer" unique_id=1496253920]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1552749608]
+layout_mode = 2
+text = "play"
