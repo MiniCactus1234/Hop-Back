@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b50dfi71fdem7"]
+
+[ext_resource type="Script" uid="uid://3vmv5lo74plf" path="res://frog.gd" id="1_whe2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ekd3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_slgur"]
+size = Vector2(20, 20)
+
+[node name="Frog" type="CharacterBody2D" unique_id=1136025286]
+script = ExtResource("1_whe2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1800180971]
+shape = SubResource("RectangleShape2D_6ekd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1848104848]
+texture = SubResource("PlaceholderTexture2D_slgur")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2051959770]
+
+[node name="TongueRay" type="RayCast2D" parent="." unique_id=1197171020]
+collide_with_areas = true
+
+[node name="Tongue" type="Line2D" parent="." unique_id=351936787]

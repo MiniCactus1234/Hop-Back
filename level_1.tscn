@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://sbqeyjrwr50a"]
+
+[ext_resource type="PackedScene" uid="uid://b50dfi71fdem7" path="res://frog.tscn" id="1_frog"]
+[ext_resource type="Script" uid="uid://dayk5wbv5vqx7" path="res://level.gd" id="1_hn12h"]
+[ext_resource type="PackedScene" uid="uid://b36u4ms86kxig" path="res://lily_pad.tscn" id="2_pad"]
+[ext_resource type="PackedScene" uid="uid://c7ht7x8816qmn" path="res://flower.tscn" id="4_ihfcg"]
+
+[sub_resource type="RectangleShape2D" id="Shape_ground"]
+size = Vector2(800, 40)
+
+[node name="Level1" type="Node2D" unique_id=1497330130]
+script = ExtResource("1_hn12h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=536258573]
+z_index = -10
+offset_left = -1000.0
+offset_top = -800.0
+offset_right = 5000.0
+offset_bottom = 800.0
+color = Color(0.85, 0.85, 0.85, 1)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=2113159877]
+
+[node name="StartGround" type="StaticBody2D" parent="Platforms" unique_id=1162237871]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StartGround" unique_id=564296795]
+shape = SubResource("Shape_ground")
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/StartGround" unique_id=230891746]
+offset_left = -400.0
+offset_top = -20.0
+offset_right = 400.0
+offset_bottom = 20.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="LilyPads" type="Node2D" parent="." unique_id=1647173538]
+
+[node name="FirstPad" parent="LilyPads" unique_id=204300103 instance=ExtResource("2_pad")]
+position = Vector2(250, 270)
+
+[node name="SecondPad" parent="LilyPads" unique_id=1647857500 instance=ExtResource("2_pad")]
+position = Vector2(550, 250)
+
+[node name="ThirdPad" parent="LilyPads" unique_id=1262474970 instance=ExtResource("2_pad")]
+position = Vector2(750, 150)
+
+[node name="FourthPad" parent="LilyPads" unique_id=616845033 instance=ExtResource("2_pad")]
+position = Vector2(950, 50)
+
+[node name="Frog" parent="." unique_id=519659525 instance=ExtResource("1_frog")]
+position = Vector2(-300, 250)
+
+[node name="Flower" parent="." unique_id=1568840016 instance=ExtResource("4_ihfcg")]
+position = Vector2(100, 270)

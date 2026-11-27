@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c7ht7x8816qmn"]
+
+[ext_resource type="Script" uid="uid://dgnlgh51n8xc" path="res://flower.gd" id="1_p547k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3nay7"]
+radius = 12.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nay7"]
+size = Vector2(20, 20)
+
+[node name="Flower" type="Area2D" unique_id=1568840016 groups=["tongue_target"]]
+script = ExtResource("1_p547k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=242399288]
+shape = SubResource("CircleShape2D_3nay7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=393012641]
+modulate = Color(0.54901963, 0.54901963, 0.54901963, 1)
+texture = SubResource("PlaceholderTexture2D_3nay7")

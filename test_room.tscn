@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bxyiqefbcvr68"]
+
+[ext_resource type="PackedScene" uid="uid://b50dfi71fdem7" path="res://frog.tscn" id="1_frog"]
+[ext_resource type="PackedScene" uid="uid://b36u4ms86kxig" path="res://lily_pad.tscn" id="2_pad"]
+
+[sub_resource type="RectangleShape2D" id="Shape_floor"]
+size = Vector2(1600, 40)
+
+[sub_resource type="RectangleShape2D" id="Shape_plat"]
+size = Vector2(200, 20)
+
+[node name="TestRoom" type="Node2D" unique_id=1897101985]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=709970245]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=618741268]
+shape = SubResource("Shape_floor")
+
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=316833171]
+offset_left = -800.0
+offset_top = -20.0
+offset_right = 800.0
+offset_bottom = 20.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=475992859]
+position = Vector2(-300, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=447693679]
+shape = SubResource("Shape_plat")
+
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1699191853]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1419199094]
+position = Vector2(350, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=296796084]
+shape = SubResource("Shape_plat")
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1074559101]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="Frog" parent="." unique_id=1932174163 instance=ExtResource("1_frog")]
+position = Vector2(-600, 250)
+
+[node name="LilyPad1" parent="." unique_id=479685118 instance=ExtResource("2_pad")]
+position = Vector2(-100, 270)
+
+[node name="LilyPad2" parent="." unique_id=794329665 instance=ExtResource("2_pad")]
+position = Vector2(100, 200)
+
+[node name="LilyPad3" parent="." unique_id=1562598712 instance=ExtResource("2_pad")]
+position = Vector2(550, 120)

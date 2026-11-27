@@ -1,0 +1,6 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Web builds (upload the zip to itch, don't commit it)
+build/
