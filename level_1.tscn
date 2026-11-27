@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dayk5wbv5vqx7" path="res://level.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://b36u4ms86kxig" path="res://lily_pad.tscn" id="2_pad"]
 [ext_resource type="PackedScene" uid="uid://c7ht7x8816qmn" path="res://flower.tscn" id="4_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://be6jdu6p5qo65" path="res://goal.tscn" id="5_rka8t"]
 
 [sub_resource type="RectangleShape2D" id="Shape_ground"]
 size = Vector2(800, 40)
@@ -53,3 +54,7 @@ position = Vector2(-300, 250)
 
 [node name="Flower" parent="." unique_id=1568840016 instance=ExtResource("4_ihfcg")]
 position = Vector2(100, 270)
+
+[node name="Goal" parent="." unique_id=38197771 instance=ExtResource("5_rka8t")]
+position = Vector2(1056, 8)
+next_level = "uid://dpqkfdlkimhby"

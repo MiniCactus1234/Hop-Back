@@ -21,6 +21,7 @@ func _on_pad_came_alive():
 		level_complete()
 
 func level_complete():
+	$Goal.open()
 	print("Level complete!")
 
 	var fade = create_tween()
