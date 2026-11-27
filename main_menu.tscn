@@ -27,3 +27,7 @@ layout_mode = 2
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1552749608]
 layout_mode = 2
 text = "play"
+
+[node name="HatButton" type="Button" parent="VBoxContainer" unique_id=227771701]
+layout_mode = 2
+text = "Hat: none"

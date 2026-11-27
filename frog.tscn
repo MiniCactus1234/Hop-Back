@@ -7,8 +7,22 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_slgur"]
 size = Vector2(20, 20)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3nay7"]
+size = Vector2(14, 8)
+
 [node name="Frog" type="CharacterBody2D" unique_id=1136025286]
 script = ExtResource("1_whe2r")
+move_speed = null
+acceleration = null
+friction = null
+jump_velocity = null
+gravity = null
+coyote_time = null
+jump_buffer_time = null
+jump_cut_multiplier = null
+fall_limit = null
+zip_speed = null
+hats = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1800180971]
 shape = SubResource("RectangleShape2D_6ekd3")
@@ -22,3 +36,7 @@ texture = SubResource("PlaceholderTexture2D_slgur")
 collide_with_areas = true
 
 [node name="Tongue" type="Line2D" parent="." unique_id=351936787]
+
+[node name="Hat" type="Sprite2D" parent="." unique_id=2005483703]
+position = Vector2(0, -14)
+texture = SubResource("PlaceholderTexture2D_3nay7")

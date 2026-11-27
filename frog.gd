@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var jump_cut_multiplier: float = 0.5
 @export var fall_limit: float = 600.0
 @export var zip_speed: float = 700.0
+@export var hats: Array[Texture2D]
 
 @onready var tongue_ray: RayCast2D = $TongueRay
 @onready var tongue: Line2D = $Tongue
@@ -22,8 +23,20 @@ var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
 
 
+
 func _ready() -> void:
 	spawn_position = global_position
+
+	if GameData.hat == 0:
+		$Hat.visible = false
+
+	elif GameData.hat <= hats.size():
+		$Hat.visible = true
+		$Hat.texture = hats[GameData.hat - 1]
+
+	else:
+		$Hat.visible = false
+
 
 
 func _physics_process(delta: float) -> void:
